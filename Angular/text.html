@@ -1,0 +1,20 @@
+<html ng-app="myApp">
+<head>
+
+</head>
+<body ng-controller='TextController'>
+	<p>{{someText.message}}</p>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+
+	<script>
+		var myAppModule = angular.module('myApp', []);
+		myAppModule.controller('TextController', function($scope){
+			var someText= {};
+			someText.message = 'You have started your joureny';
+			$scope.someText = someText;
+		});
+	</script>
+	
+</body>
+</html>
