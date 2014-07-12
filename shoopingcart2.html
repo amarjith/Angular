@@ -3,8 +3,8 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
 <script src="controllers.js"></script>
 </head>
-<body ng-controller='CartController'>
-<h1>My First shoping cart using Angularjs</h1>
+<body ng-controller='Cart2Controller'>
+<h1>$watch true</h1>
 
 <div ng-repeat='item in items'>
 	<span>{{item.title}}</span>
@@ -13,6 +13,8 @@
 	<span>{{item.price * item.quantity | currency}}<span>
 	<button ng-click="remove($index)">Remove</button>
 </div>
-
+<div>Total: {{bill.total | currency}}</div>
+<div>Discount: {{bill.discount | currency}}</div>
+<div>Subtotal: {{bill.subtotal | currency}}</div>
 </body>
 </html>

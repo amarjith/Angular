@@ -1,0 +1,32 @@
+<html ng-app="myApp">
+<head>
+<style>
+	.selected{background-color:lightgreen;}
+</style>
+</head>
+<body>
+	<table ng-controller="ResautantTabController">
+		<tr ng-repeat="restaurant in directory" ng-click="selectResturant($index)" ng-class="{selected: $index==selectedRow}">
+					<td>{{restaurant.name}}</td>
+					<td>{{restaurant.cuisine}}</td>
+		<tr>
+	</table>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+	<script>
+	var myAppModule = angular.module('myApp',[]);
+	
+	myAppModule.controller('ResautantTabController',function($scope){
+		$scope.directory = [{name:'Green\'s Greens Greens', cuisine:'Salads'},
+							{name:'Biriyani', cuisine:'Indian'},
+							{name:'Chilli spice ', cuisine:'Curry'}
+							];
+						$scope.selectResturant = function(row){
+							$scope.selectedRow = row;
+						};
+	});
+	
+	</script>
+
+	
+</body>
+</html>

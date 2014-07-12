@@ -1,0 +1,33 @@
+<html ng-app="myApp">
+<head>
+
+</head>
+<body>
+	<div ng-controller="StudentCntroller">
+		<ul ng-repeat='student in students'>
+			<li>
+				{{student.id}} : {{student.name}}
+			</ul>
+		</ul>
+		<button ng-click='insert()'>Insert DDDD</button>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+	<script>
+	var myAppModule = angular.module('myApp',[]);
+	var students=[{name:'AAAAA',id:1},
+				{name:'BBBB',id:2},
+				{name:'CCCCC',id:3}]
+	myAppModule.controller('StudentCntroller',function($scope){
+			
+			$scope.students = students;
+			
+			$scope.insert = function(){
+				$scope.students.splice(students.length + 1,0,{name:'DDDD',id:students.length + 1});
+			};
+	});
+	
+	</script>
+
+	
+</body>
+</html>
